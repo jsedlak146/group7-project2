@@ -15,6 +15,10 @@ UserStories.init(
             type: DataTypes.DATE,
             defaultValue: DataTypes.fn('NOW')
         },
+        daysWithoutCigs: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+        },
         story: {
             type: DataTypes.STRING,
             allowNull: false,

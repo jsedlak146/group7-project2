@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS smokers_db;
+
+CREATE DATABASE smokers_db;

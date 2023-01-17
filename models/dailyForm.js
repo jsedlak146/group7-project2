@@ -27,6 +27,10 @@ DailyForm.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
+        daysWithoutCigs: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+        },
         triggers: {
             type: DataTypes.ARRAY(DataTypes.STRING),
             allowNull: false,

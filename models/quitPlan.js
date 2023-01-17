@@ -15,6 +15,10 @@ QuitPlan.init(
             type: DataTypes.INTEGER,
             allowNull: false,
         },
+        timeSmoking: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+        },
         cigPrice: {
             type: DataTypes.INTEGER,
             allowNull: false,

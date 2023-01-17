@@ -1,8 +1,9 @@
+const router = require('express').Router();
 const { QuitPlan } = require("../../models");
-const Chart = require('chart.js');
+const Chart = require('chart');
 
 
-app.get('/api/Users/:id', withAuth, (req, res) => {
+router.get('/api/Users/:id', (req, res) => {
     QuitPlan.findByPk(req.params.id).then(user => {
         const howManyCigs = user.howManyCigs;
         const cigPrice = user.cigPrice;
@@ -40,7 +41,7 @@ app.get('/api/Users/:id', withAuth, (req, res) => {
             }
         });
         // this is to render the data to the handlebar
-        res.render('graph-card'), {
+        res.render('../../views/layouts/graph-card'), {
             howManyCigs: howManyCigs,
             cigPrice: cigPrice,
             chart: chart.toBase64Image()
@@ -50,3 +51,4 @@ app.get('/api/Users/:id', withAuth, (req, res) => {
 
 })
 
+module.exports = router;

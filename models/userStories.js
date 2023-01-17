@@ -13,7 +13,7 @@ UserStories.init(
         },
         date: {
             type: DataTypes.DATE,
-            defaultValue: DataTypes.fn('NOW')
+            defaultValue: DataTypes.NOW
         },
         daysWithoutCigs: {
             type: DataTypes.INTEGER,

@@ -13,7 +13,7 @@ DailyForm.init(
         },
         date: {
             type: DataTypes.DATE,
-            defaultValue: DataTypes.fn('NOW')
+            defaultValue: DataTypes.NOW
         },
         howManyCigs: {
             type: DataTypes.INTEGER,

@@ -20,7 +20,7 @@ DailyForm.init(
             allowNull: false,
         },
         cravings: {
-            type: DataTypes.ARRAY(DataTypes.STRING),
+            type: DataTypes.STRING,
             allowNull: false,
         },
         mood: {
@@ -32,7 +32,7 @@ DailyForm.init(
             allowNull: false,
         },
         triggers: {
-            type: DataTypes.ARRAY(DataTypes.STRING),
+            type: DataTypes.STRING,
             allowNull: false,
         },
     },

@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { QuitPlan } = require('../../models');
 const withAuth = require('../..//utils/auth');
 
-router.post('/', withAuth, async (req, res) => {
+router.post('/newQuitPlan', withAuth, async (req, res) => {
     try {
         const newPlan = await QuitPlan.create({
             ...req.body,

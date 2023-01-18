@@ -32,9 +32,9 @@ router.get("/stories", async (req, res) => {
   }
 });
 
-router.get("/profilequitplan", withAuth, async (req, res) => {
+router.get("/profile/:id", withAuth, async (req, res) => {
   try {
-    const userData = await User.findByPk(req.session.user_id, {
+    const userData = await User.findByPk(req.params.id, {
       attributes: { exclude: ["password"] },
       include: [{ model: QuitPlan }],
     });

@@ -1,31 +1,92 @@
+{{log user}}
 <div>
-<h2>Welcome {{User.name}} !</h2>
+    <h2>Welcome {{name}} !</h2>
     <p>This is your custom plan to quit smoking over the next 90 days</p>
 </div>
 
-{{#if QuitPlan.length}}
+
 <div>
 
-{{!-- canvas for graph below --}}
-<canvas id='myChart'> 
-    <div>
-        <p>Cigarettes per week: {{howManyCigs}}</p>
-        <p>Money spent per week: {{moneySpentPerWeek}}</p>
-        <img src="data:image/png;base64, {{chart}}">
+    {{!-- canvas for graph below --}}
+    <canvas id='myChart'>
+        <div>
+            <p>Cigarettes per week: {{howManyCigs}}</p>
+            <p>Money spent per week: {{moneySpentPerWeek}}</p>
+            <img src="data:image/png;base64, {{chart}}">
+        </div>
+    </canvas>
+    {{!-- end canvas --}}
+
+<div class="row mt-4">
+    <div class="col-md-6">
+        <h3>Please complete your daily form!</h3>
+
+        <form class="form new-project-form">
+            <div class="form-group">
+                <label for="howManyCigs">How many cigs do you smoke in a 24 hour period?</label>
+                <input class="form-input" type="text" id="howManyCigs" name="howManyCigs" />
+            </div>
+            <div class="form-group">
+                <label for="timeSmoking">How many years have you been smoking?</label>
+                <input class="form-input" type="number" id="timeSmoking" name="timeSmoking" />
+            </div>
+            <div class="form-group">
+                <label for="cigPrice">How much does a pack of cigarettes cost you?</label>
+                <textarea class="form-input" id="cigPrice" name="cigPrice"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="whyQuit">Why do you want to quit smoking in the next 90
+                    days?</label>
+                <textarea class="form-input" id="whyQuit" name="whyQuit"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="journalEntry">Please enter a brief overview of how you felt today, or any other relevant details to your quitting journey.</label>
+                <input class="form-input" type="text" id="journalEntry" name="journalEntry" />
+            </div>
+            <div class="form-group">
+                <label for="triggers">What is the main trigger that causes you to want a cigarette?</label>
+                <br>
+                <form action="/action_page.php">
+                    <input type="checkbox" id="trigger1" name="trigger1" value="stress" />
+                    <label for="vehicle1"> Stress </label><br />
+                    <input type="checkbox" id="trigger2" name="trigger2" value="boredom" />
+                    <label for="vehicle2"> Boredom </label><br />
+                    <input type="checkbox" id="trigger3" name="trigger3" value="cool" />
+                    <label for="vehicle3"> Want to look Cool</label><br /><br />
+                    <input type="submit" value="Submit" />
+                </form>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Create</button>
+            </div>
+        </form>
     </div>
-</canvas>
-{{!-- end canvas --}}
 
+    {{!-- {{#if projects.length}}
+    <div class="col-md-6 project-list">
+        <h3>Current Projects:</h3>
+
+        {{#each projects as |project|}}
+        <div class="row mb-2">
+            <div class="col-md-8">
+                <h4><a href="/project/{{project.id}}">{{project.name}}</a></h4>
+            </div>
+            <div class="col-md-4">
+                <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    {{/if}} --}}
 </div>
-{{/if}}
+
+<script src="./js/profile.js"></script>
+
 
 <div>
-{{!-- <h3>Remember You're Quiting!</h3>
+    {{!-- <h3>Remember You're Quiting!</h3>
     <p>I used to smoke {{QuitPlan.howManyCigs}} per day</p>
     <p>I gave up {{QuitPlan.timeSmoking}} a day to smoking</p>
 
 </div> --}}
-
-
-
-

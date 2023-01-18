@@ -5,7 +5,16 @@
 
 {{if QuitPlan.length}}
 <div>
-    
+
+{{!-- canvas for graph below --}}
+<canvas id='myChart'> 
+    <div>
+        <p>Cigarettes per week: {{howManyCigs}}</p>
+        <p>Money spent per week: {{moneySpentPerWeek}}</p>
+        <img src="data:image/png;base64, {{chart}}">
+    </div>
+</canvas>
+{{!-- end canvas --}}
 
 </div>
 {{/if}}

@@ -1,24 +1,18 @@
-const router = require('express').Router();
-const { QuitPlan } = require("../../models");
-const Chart = require('chart');
-
-
-router.get('/api/Users/:id', (req, res) => {
-    QuitPlan.findByPk(req.params.id).then(user => {
-        const howManyCigs = user.howManyCigs;
-        const cigPrice = user.cigPrice;
-
+function createChart(userId) {
+    // where should the data be retrieved from?
+    fetch('/api/Users/'+userId)
+      .then(response => response.json())
+      .then(data => {
+        const howManyCigs = data.howManyCigs;
+        const cigPrice = data.cigPrice;
         // chart.js needs a "canvas" to render the graph
-        // <canvas id='myChart'> </canvas> to wrap the graph
         const ctx = document.getElementById('myChart').getContext('2d');
         // this is where you create a graph with the data
         const chart = new Chart(ctx, {
             type: 'bar',
             data: {
-                // x and y axis?
                 labels: ['Cigarettes per week', 'Money spent per week'],
                 datasets: [{
-                    // label of the data set / graph
                     label: 'Weekly use and cost of cigarettes',
                     data: [howManyCigs, cigPrice],
                     backgroundColor: [
@@ -40,15 +34,9 @@ router.get('/api/Users/:id', (req, res) => {
                 }
             }
         });
-        // this is to render the data to the handlebar
-        res.render('../../views/layouts/graph-card'), {
-            howManyCigs: howManyCigs,
-            cigPrice: cigPrice,
-            chart: chart.toBase64Image()
-        }
+      });
+}
 
-    })
-
-})
-
-module.exports = router;
+document.addEventListener("DOMContentLoaded", function() {
+    createChart(userId);
+});

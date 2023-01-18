@@ -1,45 +1,45 @@
 [
     {
-        "from": "Jim",
+        "name": "Jim",
         "tip": "Get support from family and friends, or consider joining a support group for people trying to quit smoking.",
         "review": "SUPER HELPFUL!!!. I can't believe how much this website helped me!",
         "rating": "9/10",
-        "subDate": "12/09/2022"
+        "date": "12/09/2022"
       },
       {
-        "from": "Dwight",
+        "name": "Dwight",
         "tip": "Find alternatives to smoking, such as chewing gum or taking a walk when the urge to smoke strikes.",
-        "review": "I stumped upon this website after going down a rabbit hole on youtube after ten failed attempts to quit smoke.",
+        "review": "I stumbleded upon this website after going down a rabbit hole on youtube after ten failed attempts to quit smoke.",
         "rating": "8.5/10",
-        "subDate": "12/15/2022"
+        "date": "12/15/2022"
       },
       {
-        "from": "Pam",
+        "name": "Pam",
         "tip": "Be prepared for the withdrawal symptoms that come with quitting smoking. This can include symptoms such as irritability, anxiety, and difficulty concentrating.",
         "review": "I was a smoker for over 20 years and I thought I could never quit. But I decided to give it a try and used a combination of hypnotherapy and THIS WEBSITE to track my progress. Now, I've been smoke-free for 5 years and I feel great.",
         "rating": "7/10",
-        "subDate": "12/22/2022"
+        "date": "12/22/2022"
       },
       {
-        "from": "Michael",
+        "name": "Michael",
         "tip": "Be patient with yourself. Quitting smoking is a process, and it may take several attempts before you are successful. Dont get discouraged if you slip up and smoke a cigarette, just get back on track and keep trying.",
         "review": "After getting WOKE about smokeing throught his website, I not only saved my life, but I saved a million dollars over the course of my life time.",
         "rating": "11/10",
-        "subDate": "12/29/2022"
+        "date": "12/29/2022"
       },
       {
-        "from": "Karen CEO Big Tobacco",
+        "name": "Karen CEO Big Tobacco",
         "tip": "Just keep smoking, It makes you look so cool .",
         "review": "This website is filled with misinformation. SMOKING IS NOT CONNECTED TO CANCER!!!!!!",
         "rating": "0/10",
-        "subDate": "01/07/2023"
+        "date": "01/07/2023"s
       },
       {
-        "from": "Stanley",
+        "name": "Stanley",
         "tip": "Try nicotine replacement therapy (NRT) such as gum, patches, lozenges, or nasal spray.",
         "review": "Ew smoking gtfo!",
         "rating": "100/10",
-        "subDate": "01/08/2023"
+        "date": "01/08/2023"
       }
   ]
 

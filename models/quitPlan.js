@@ -31,6 +31,13 @@ QuitPlan.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
+        user_id: {
+            type: DataTypes.INTEGER,
+            refences: {
+                model: "user",
+                key: "id"
+            }
+        }
 
     },
     {

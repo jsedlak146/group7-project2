@@ -20,7 +20,7 @@ UserStories.init(
             allowNull: false,
         },
         story: {
-            type: DataTypes.STRING,
+            type: DataTypes.TEXT,
             allowNull: false,
         },
     },

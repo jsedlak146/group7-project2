@@ -14,7 +14,29 @@
   </head>
   <body>
 
-    <div class="flex-column justify-space-around">
+<header>
+  <div class="containter">
+    <div class="row">
+      <div class="col">
+        <h1>Quit smoking in 90 Days</h1>
+      </div>
+      <nav class="col">
+        <a href="/stories">Stories</a>
+            {{#if logged_in}}
+        <a href="/profile">profile</a>
+            |
+        <button class="no-button" id="logout">logout</button>
+            {{else}}
+            <a href="/login">login</a>
+            {{/if}}
+      </nav>
+      </div>
+    </div>
+  </div>
+
+</header>
+
+    {{!-- <div class="flex-column justify-space-around">
       <header class="display-flex justify-space-between align-center p-2">
         <h1>
           <span role="img" aria-label="money">💸</span>
@@ -31,7 +53,7 @@
           {{/if}}
         </nav>
       </header>
-      <main class="container container-fluid mt-5">
+      <main class="container container-fluid mt-5"> --}}
         <!-- Render the sub layout -->
         {{{body}}}
       </main>

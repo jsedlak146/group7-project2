@@ -7,6 +7,16 @@
     <div>
         <h1>{{name}}'s Quit Plan</h1>
         {{!-- the quitplan will be rendered here --}}
+        <h2>Here are your weekly goals:</h2>
+            {{!-- example --}}
+            <p>No more than {{ weeklyCigs }} this week!</p>
+        {{else}}
+        <p>It looks like you haven't created a quit plan yet, please click the button below to begin!</p>
+        <div class="form-group">
+            <a href="/new-plan">
+            <button type="submit" class="btn btn-primary">Create</button>
+            </a>
+        </div>
     </div>
     {{/if}}
 </div>

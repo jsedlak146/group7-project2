@@ -13,8 +13,8 @@ router.get("/", async (req, res) => {
       // ],
     });
 
-    const stories = allStories.map((story) => story.get({ plain: true }));
-    //do the thing here !!!!
+    const randomIndex = Math.floor(Math.random() * (allStories.length - 3));
+    const stories = allStories.slice(randomIndex, randomIndex + 3).map((story) => story.get({ plain: true }));
     res.render("homepage", { stories, logged_in: req.session.logged_in });
   } catch (err) {
     res.status(500).json(err);

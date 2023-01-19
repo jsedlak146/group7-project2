@@ -1,9 +1,15 @@
 {{log user}}
 <div>
     <h2>Welcome {{name}} !</h2>
-    <p>This is your custom plan to quit smoking over the next 90 days</p>
-</div>
 
+    {{#if quitPlan}}
+    <p>This is your custom plan to quit smoking over the next 90 days</p>
+    <div>
+        <h1>{{name}}'s Quit Plan</h1>
+        {{!-- the quitplan will be rendered here --}}
+    </div>
+    {{/if}}
+</div>
 
 <div>
 

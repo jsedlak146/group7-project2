@@ -38,18 +38,19 @@ router.get("/profile", withAuth, async (req, res) => {
   try {
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ["password"] },
-      include: [{ model: QuitPlan }],
+      include: [{ model: QuitPlan }, { model: DailyForm }],
     });
-    console.log(userData);
+    // if the dailyForm shows up in userData log
     const user = userData.get({ plain: true });
-
+    
+    console.log('I AM USER DATA', user);
     const dailyForm = await DailyForm.findAll({
       where: {user_id: req.session.user_id}
     })
      const serializeDailyForm = dailyForm.map((form) => form.get({ plain: true }));
 
 
-    console.log(dailyForm);
+    // console.log(dailyForm);
 
     
 

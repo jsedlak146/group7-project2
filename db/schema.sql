@@ -3,4 +3,4 @@ DROP DATABASE IF EXISTS smokers_db;
 
 CREATE DATABASE smokers_db;
 
-SELECT * FROM smokers_db.user
+SELECT * FROM smokers_db.daily_form;

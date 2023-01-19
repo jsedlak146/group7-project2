@@ -14,7 +14,9 @@ router.get("/", async (req, res) => {
     });
 
     const randomIndex = Math.floor(Math.random() * (allStories.length - 3));
-    const stories = allStories.slice(randomIndex, randomIndex + 3).map((story) => story.get({ plain: true }));
+    const stories = allStories
+      .slice(randomIndex, randomIndex + 3)
+      .map((story) => story.get({ plain: true }));
     res.render("homepage", { stories, logged_in: req.session.logged_in });
   } catch (err) {
     res.status(500).json(err);
@@ -38,11 +40,21 @@ router.get("/profile", withAuth, async (req, res) => {
       attributes: { exclude: ["password"] },
       include: [{ model: QuitPlan }],
     });
-console.log(userData)
+    console.log(userData);
     const user = userData.get({ plain: true });
-console.log(user)
+
+    const dailyForm = await DailyForm.findAll({
+      where: {user_id: req.session.user_id}
+    })
+     const serializeDailyForm = dailyForm.map((form) => form.get({ plain: true }));
+
+
+    console.log(dailyForm);
+
+    
+
     res.render("profile", {
-      ...user,
+      ...user, // use serialize data pass it along
       logged_in: req.session.logged_in,
     });
   } catch (err) {
@@ -94,14 +106,16 @@ router.get("/scared", async (req, res) => {
   }
 });
 
-router.get('/new-plan', withAuth, async (req, res) => { 
-  try { 
-    const userData = await User.findByPk(req.session.user_id, { 
-      attributes: { include: ["name"] }, 
-    }); 
+router.get("/new-plan", withAuth, async (req, res) => {
+  try {
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { include: ["name"] },
+    });
     const user = userData.get({ plain: true });
-    res.render('quitPlan', { user, logged_in: req.session.logged_in }); 
-  } catch (err) { res.status(500).json(err); } 
+    res.render("quitPlan", { user, logged_in: req.session.logged_in });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 //   router.get('/graph/:id', (req, res) => {

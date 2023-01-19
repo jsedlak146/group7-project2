@@ -86,6 +86,14 @@ router.get("/login", (req, res) => {
   res.render("login");
 });
 
+router.get("/scared", async (req, res) => {
+  try {
+    res.render("scared");
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 //   router.get('/graph/:id', (req, res) => {
 //     QuitPlan.findByPk(req.params.id).then(user => {
 //         const howManyCigs = user.howManyCigs;

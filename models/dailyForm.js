@@ -31,6 +31,10 @@ DailyForm.init(
             type: DataTypes.INTEGER,
             allowNull: false,
         },
+        journalEntry: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
         triggers: {
             type: DataTypes.STRING,
             allowNull: false,

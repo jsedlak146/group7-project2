@@ -24,9 +24,9 @@ const dailyFormHandler = async (event) => {
         alert(response.statusText);
       }
     }
-  };
+};
   
-  document
-    .querySelector('.new-project-form')
-    .addEventListener('submit', dailyFormHandler);
+const formButton = document.querySelector('.new-project-form')
+
+formButton.addEventListener('submit', dailyFormHandler);
   

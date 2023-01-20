@@ -1,12 +1,15 @@
 {{log user}}
 <div>
-    <h2>Welcome {{name}} !</h2>
+    <h2>Welcome {{capitalize name}} !</h2>
 
     {{#if quit_plan}}
     <p>This is your custom plan to quit smoking over the next 90 days</p>
     <div>
-        <h1>{{name}}'s Quit Plan</h1>
+        <h1>{{capitalize name}}'s Quit Plan</h1>
         {{!-- the quitplan will be rendered --}}
+        <h2>Schedule</h2>
+        <p>As former smokers, we understand how difficult it can be to quit smoking. One of the most difficult aspects of quitting is the physical and emotional withdrawal that smokers experience when they stop using tobacco. While some smokers choose to quit "cold-turkey", it is much easier for many smokers to quit gradually over a period of time. Below we have created a quit schedule based on your reported tobacco usage that will allow you to taper off of cigarettes at a pace that works best for you.</p>
+        <div class="schedule-container"></div>
     </div>
     {{else}}
     <p>You haven't created a quit plan yet. Please create one to start your journey to quit smoking.</p>

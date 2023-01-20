@@ -1,25 +1,43 @@
 <div class="row">
     <div class="col-auto">
-        <h2>Welcome, {{name}}!</h2>
+        <h2>Welcome, {{capitalize user.name}}!</h2>
     </div>
 </div>
 
 <div class="row mt-4">
     <div class="col-md-6">
-        <h3>Give us your data</h3>
+        <p>Please answer the questions below as accurately as you can. Your custom quit plan will be generated based on your response, so it is important to be as honest as possible about your tobacco use.</p>
 
-        <form class="form new-project-form">
+        <form class="form quitplan-form">
             <div class="form-group">
-                <label for="howManyCigs">How many cigs do you smoke in a 24 hour period?</label>
-                <input class="form-input" type="text" id="howManyCigs" name="howManyCigs" />
+                <label for="howManyCigs">How many cigarettes do you smoke in a 24-hour period?</label>
+                <select class="form-input" id="howManyCigs" name="howManyCigs" required>
+                    <option value="" disabled selected>Select an Option</option>
+                    <option value="Less than 5 cigarettes per day">Less than 5 cigarettes per day</option>
+                    <option value="5-10 cigarettes per day">5-10 cigarettes per day</option>
+                    <option value="10-20 cigarettes per day">10-20 cigarettes per day</option>
+                    <option value="20 or more cigarettes daily">20 or more cigarettes daily</option>
+                </select>
             </div>
             <div class="form-group">
-                <label for="timeSmoking">How lon have you been smoking?</label>
-                <input class="form-input" type="number" id="timeSmoking" name="timeSmoking" />
+                <label for="timeSmoking">How long have you been smoking?</label>
+                <select class="form-input" id="timeSmoking" name="timeSmoking" required>
+                    <option value="" disabled selected>Select an Option</option>
+                    <option value="Less than one year">Less than one year</option>
+                    <option value="1-5 years">1-5 years</option>
+                    <option value="5-10 years">5-10 years</option>
+                    <option value="10+ years">10+ years</option>
+                </select>
             </div>
             <div class="form-group">
-                <label for="cigPrice">How much does a pack of cigarettes cost you?</label>
-                <textarea class="form-input" id="cigPrice" name="cigPrice"></textarea>
+                <label for="cigPrice">How much do you spend on cigarettes per week?</label>
+                <select class="form-input" id="cigPrice" name="cigPrice" required>
+                    <option value="" disabled selected>Select an Option</option>
+                    <option value="Less than $20">Less than $20</option>
+                    <option value="$20-$40">$20-$40</option>
+                    <option value="$40-$80">$40-$80</option>
+                    <option value="More than $80">More than $80</option>
+                </select>
             </div>
             <div class="form-group">
                 <label for="whyQuit">Why do you want to quit smoking in the next 90
@@ -28,22 +46,22 @@
             </div>
             <div class="form-group">
                 <label for="triggers">What is your main trigger for smoking?</label>
-                <form action="/action_page.php">
-                    <input type="checkbox" id="trigger1" name="trigger1" value="stress" />
-                    <label for="vehicle1"> Stress </label><br />
-                    <input type="checkbox" id="trigger2" name="trigger2" value="boredom" />
-                    <label for="vehicle2"> Boredom </label><br />
-                    <input type="checkbox" id="trigger3" name="trigger3" value="cool" />
-                    <label for="vehicle3"> Want to look Cool</label><br /><br />
-                    <input type="submit" value="Submit" />
-                </form>
+                <select class="form-input" id="triggers" name="triggers" required>
+                    <option value="" disabled selected>Select an Option</option>
+                    <option value="stress">Stress</option>
+                    <option value="boredom">Boredom</option>
+                    <option value="social">Social Pressure</option>
+                </select>
             </div>
 
             <div class="form-group">
-                <button type="submit" class="btn btn-primary">Create</button>
+                <button type="submit" class="btn btn-primary">Create Quit Plan</button>
             </div>
         </form>
     </div>
+</div>
+
+<script src="./js/quitplan.js"></script>
 
     {{!-- {{#if projects.length}}
     <div class="col-md-6 project-list">
@@ -61,6 +79,5 @@
         {{/each}}
     </div>
     {{/if}} --}}
-</div>
 
-<script src="./js/profile.js"></script>
+

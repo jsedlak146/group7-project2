@@ -31,10 +31,17 @@ DailyForm.init(
             type: DataTypes.INTEGER,
             allowNull: false,
         },
-        triggers: {
+        journalEntry: {
             type: DataTypes.STRING,
             allowNull: false,
         },
+        user_id: {
+            type: DataTypes.INTEGER,
+            refences: {
+                model: "user",
+                key: "id"
+            }
+        }
     },
     {
         sequelize,

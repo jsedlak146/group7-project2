@@ -2,7 +2,7 @@
 <div>
     <h2>Welcome {{name}} !</h2>
 
-    {{#if quitPlan}}
+    {{#if quit_plan}}
     <p>This is your custom plan to quit smoking over the next 90 days</p>
     <div>
         <h1>{{name}}'s Quit Plan</h1>
@@ -33,40 +33,29 @@
 
         <form class="form new-project-form">
             <div class="form-group">
-                <label for="howManyCigs">How many cigs do you smoke in a 24 hour period?</label>
-                <input class="form-input" type="text" id="howManyCigs" name="howManyCigs" />
+                <label for="date">What is today's date?</label>
+                <input class="form-input" type="date" id="date" name="date" />
             </div>
             <div class="form-group">
-                <label for="timeSmoking">How many years have you been smoking?</label>
-                <input class="form-input" type="number" id="timeSmoking" name="timeSmoking" />
+                <label for="howManyCigs">How many cigarettes did you smoke today?</label>
+                <input class="form-input" type="number" id="howManyCigs" name="howManyCigs" />
             </div>
             <div class="form-group">
-                <label for="cigPrice">How much does a pack of cigarettes cost you?</label>
-                <textarea class="form-input" id="cigPrice" name="cigPrice"></textarea>
+                <label for="cravings">Did you have any cravings today? If so, when?</label>
+                <textarea class="form-input" id="cravings" name="cravings"></textarea>
             </div>
             <div class="form-group">
-                <label for="whyQuit">Why do you want to quit smoking in the next 90
-                    days?</label>
-                <textarea class="form-input" id="whyQuit" name="whyQuit"></textarea>
+                <label for="mood">How was your mood today?</label>
+                <textarea class="form-input" id="mood" name="mood"></textarea>
+            </div>
+             <div class="form-group">
+                <label for="daysWithoutCigs">How many days have you gone without smoking??</label>
+                <input class="form-input" type="number" id="daysWithoutCigs" name="daysWithoutCigs"></input>
             </div>
             <div class="form-group">
                 <label for="journalEntry">Please enter a brief overview of how you felt today, or any other relevant details to your quitting journey.</label>
                 <input class="form-input" type="text" id="journalEntry" name="journalEntry" />
             </div>
-            <div class="form-group">
-                <label for="triggers">What is the main trigger that causes you to want a cigarette?</label>
-                <br>
-                <form action="/action_page.php">
-                    <input type="checkbox" id="trigger1" name="trigger1" value="stress" />
-                    <label for="vehicle1"> Stress </label><br />
-                    <input type="checkbox" id="trigger2" name="trigger2" value="boredom" />
-                    <label for="vehicle2"> Boredom </label><br />
-                    <input type="checkbox" id="trigger3" name="trigger3" value="cool" />
-                    <label for="vehicle3"> Want to look Cool</label><br /><br />
-                    <input type="submit" value="Submit" />
-                </form>
-            </div>
-
             <div class="form-group">
                 <button type="submit" class="btn btn-primary">Create</button>
             </div>
@@ -92,6 +81,7 @@
 </div>
 
 <script src="./js/profile.js"></script>
+<script src="./js/graph.js"></script>
 
 
 <div>

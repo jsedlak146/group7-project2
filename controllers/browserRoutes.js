@@ -14,7 +14,9 @@ router.get("/", async (req, res) => {
     });
 
     const randomIndex = Math.floor(Math.random() * (allStories.length - 3));
-    const stories = allStories.slice(randomIndex, randomIndex + 3).map((story) => story.get({ plain: true }));
+    const stories = allStories
+      .slice(randomIndex, randomIndex + 3)
+      .map((story) => story.get({ plain: true }));
     res.render("homepage", { stories, logged_in: req.session.logged_in });
   } catch (err) {
     res.status(500).json(err);
@@ -36,23 +38,24 @@ router.get("/profile", withAuth, async (req, res) => {
   try {
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ["password"] },
-      include: [{ model: QuitPlan }],
+      include: [{ model: QuitPlan }, { model: DailyForm }],
     });
-console.log(userData)
+    // if the dailyForm shows up in userData log
     const user = userData.get({ plain: true });
-console.log(user)
-    res.render("profile", {
-      ...user,
-      logged_in: req.session.logged_in,
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+    
+    console.log('I AM USER DATA', user);
+    const dailyForm = await DailyForm.findAll({
+      where: {user_id: req.session.user_id}
+    })
+     const serializeDailyForm = dailyForm.map((form) => form.get({ plain: true }));
 
-router.get("/quitplan", withAuth, async (req, res) => {
-  try {
-    res.render("quitPlan", {
+
+    // console.log(dailyForm);
+
+    
+
+    res.render("profile", {
+      ...user, // use serialize data pass it along
       logged_in: req.session.logged_in,
     });
   } catch (err) {
@@ -99,6 +102,18 @@ router.get("/login", (req, res) => {
 router.get("/scared", async (req, res) => {
   try {
     res.render("scared");
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get("/quitplan", withAuth, async (req, res) => {
+  try {
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { include: ["name"] },
+    });
+    const user = userData.get({ plain: true });
+    res.render("quitPlan", { user, logged_in: req.session.logged_in });
   } catch (err) {
     res.status(500).json(err);
   }

@@ -1,8 +1,10 @@
-function createChart(userId) {
-    // where should the data be retrieved from?
-    fetch('/api/Users/'+userId)
+
+function createChart() {
+    // where should the data be retrieved from
+    fetch('/api/journal')
       .then(response => response.json())
       .then(data => {
+        console.log(data);
         const howManyCigs = data.howManyCigs;
         const cigPrice = data.cigPrice;
         // chart.js needs a "canvas" to render the graph
@@ -11,7 +13,7 @@ function createChart(userId) {
         const chart = new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: ['Cigarettes per week', 'Money spent per week'],
+                labels: ['Cigarettes per day', 'Cigarettes per day'],
                 datasets: [{
                     label: 'Weekly use and cost of cigarettes',
                     data: [howManyCigs, cigPrice],
@@ -38,5 +40,5 @@ function createChart(userId) {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-    createChart(userId);
+    createChart();
 });

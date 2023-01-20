@@ -50,6 +50,16 @@ console.log(user)
   }
 });
 
+router.get("/quitplan", withAuth, async (req, res) => {
+  try {
+    res.render("quitPlan", {
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 router.get("/allforms", async (req, res) => {
   try {
     const allForms = await DailyForm.findAll();

@@ -1,0 +1,50 @@
+[{
+    "id": 1,
+    "date": "2023-01-13T00:00:00.000Z",
+    "howManyCigs": 5,
+    "cravings": "bad",
+    "mood": "good",
+    "daysWithoutCigs": 3,
+    "journalEntry": "i'm okay",
+    "user_id": 1
+},
+{
+    "id": 2,
+    "date": "2023-01-14T00:00:00.000Z",
+    "howManyCigs": 10,
+    "cravings": "semi-bad",
+    "mood": "good",
+    "daysWithoutCigs": 3,
+    "journalEntry": "i'm okay",
+    "user_id": 1
+},
+{
+    "id": 3,
+    "date": "2023-01-15T00:00:00.000Z",
+    "howManyCigs": 15,
+    "cravings": "ok",
+    "mood": "good",
+    "daysWithoutCigs": 3,
+    "journalEntry": "i'm okay",
+    "user_id": 1
+},
+{
+    "id": 4,
+    "date": "2023-01-16T00:00:00.000Z",
+    "howManyCigs": 20,
+    "cravings": "more ok",
+    "mood": "good",
+    "daysWithoutCigs": 3,
+    "journalEntry": "i'm okay",
+    "user_id": 1
+},
+{
+    "id": 5,
+    "date": "2023-01-17T00:00:00.000Z",
+    "howManyCigs": 25,
+    "cravings": "nah",
+    "mood": "good",
+    "daysWithoutCigs": 3,
+    "journalEntry": "i'm okay",
+    "user_id": 1
+}]

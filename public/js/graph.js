@@ -1,22 +1,23 @@
-
 function createChart() {
-    // where should the data be retrieved from
+    // fetch data from the specified api endpoint
     fetch('/api/journal')
       .then(response => response.json())
       .then(data => {
-        console.log(data);
-        const howManyCigs = data.howManyCigs;
-        const cigPrice = data.cigPrice;
-        // chart.js needs a "canvas" to render the graph
+        // extract the date and number of cigarettes from the "daily_forms" array
+        const dates = data.daily_forms.map(form => form.date.slice(0,10));
+        const numCigs = data.daily_forms.map(form => form.howManyCigs);
+
+        // get the canvas element from the HTML where the chart will be rendered
         const ctx = document.getElementById('myChart').getContext('2d');
-        // this is where you create a graph with the data
+
+        // create a new chart using Chart.js with the extracted data and options
         const chart = new Chart(ctx, {
-            type: 'bar',
+            type: 'line',
             data: {
-                labels: ['Cigarettes per day', 'Cigarettes per day'],
+                labels: dates, // set the x-axis labels to the extracted dates
                 datasets: [{
-                    label: 'Weekly use and cost of cigarettes',
-                    data: [howManyCigs, cigPrice],
+                    label: 'Cigarettes Smoked per Day',
+                    data: numCigs, // set the data points to the extracted number of cigarettes
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2',
                         'rgba(54, 162, 235, 0.2)'
@@ -30,15 +31,24 @@ function createChart() {
             },
             options: {
                 scales: {
-                    y: {
-                        beginAtZero: true
-                    }
+                    xAxes: [{
+                        type: 'time', 
+                        time: {
+                            unit: 'day'
+                        }
+                    }],
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
                 }
             }
         });
       });
 }
 
+// event listener to call the "createChart" function when the DOM is loaded
 document.addEventListener("DOMContentLoaded", function() {
     createChart();
 });

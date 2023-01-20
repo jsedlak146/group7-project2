@@ -1,25 +1,22 @@
 {{log user}}
 <div>
-    <h2>Welcome {{name}} !</h2>
+    <h2>Welcome {{capitalize name}} !</h2>
 
     {{#if quit_plan}}
     <p>This is your custom plan to quit smoking over the next 90 days</p>
     <div>
-        <h1>{{name}}'s Quit Plan</h1>
-        {{!-- the quitplan will be rendered here --}}
-        <h2>Here are your weekly goals:</h2>
-            {{!-- example --}}
-            <p>No more than {{ weeklyCigs }} this week!</p>
-        {{else}}
-        <p>It looks like you haven't created a quit plan yet, please click the button below to begin!</p>
-        <div class="form-group">
-            <a href="/new-plan">
-            <button type="submit" class="btn btn-primary">Create</button>
-            </a>
-        </div>
+        <h1>{{capitalize name}}'s Quit Plan</h1>
+        {{!-- the quitplan will be rendered --}}
+        <h2>Schedule</h2>
+        <p>As former smokers, we understand how difficult it can be to quit smoking. One of the most difficult aspects of quitting is the physical and emotional withdrawal that smokers experience when they stop using tobacco. While some smokers choose to quit "cold-turkey", it is much easier for many smokers to quit gradually over a period of time. Below we have created a quit schedule based on your reported tobacco usage that will allow you to taper off of cigarettes at a pace that works best for you.</p>
+        <div class="schedule-container"></div>
     </div>
+    {{else}}
+    <p>You haven't created a quit plan yet. Please create one to start your journey to quit smoking.</p>
+    <a href="/quitplan" class="button">Generate Your Custom Quit Plan</a>
     {{/if}}
 </div>
+
 
 <div>
 
@@ -33,7 +30,7 @@
     </canvas>
     {{!-- end canvas --}}
 
-<div class="row mt-4">
+{{!-- <div class="row mt-4">
     <div class="col-md-6">
         <h3>Please complete your daily form!</h3>
 
@@ -66,7 +63,7 @@
                 <button type="submit" class="btn btn-primary">Create</button>
             </div>
         </form>
-    </div>
+    </div> --}}
 
     {{!-- {{#if projects.length}}
     <div class="col-md-6 project-list">

@@ -12,15 +12,15 @@ QuitPlan.init(
             autoIncrement: true,
         },
         howManyCigs: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             allowNull: false,
         },
         timeSmoking: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             allowNull: false,
         },
         cigPrice: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             allowNull: false,
         },
         whyQuit: {
@@ -33,7 +33,7 @@ QuitPlan.init(
         },
         user_id: {
             type: DataTypes.INTEGER,
-            refences: {
+            references: {
                 model: "user",
                 key: "id"
             }

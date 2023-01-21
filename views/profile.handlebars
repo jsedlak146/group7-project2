@@ -9,6 +9,15 @@
         {{!-- the quitplan will be rendered --}}
         <h2>Schedule</h2>
         <p>As former smokers, we understand how difficult it can be to quit smoking. One of the most difficult aspects of quitting is the physical and emotional withdrawal that smokers experience when they stop using tobacco. While some smokers choose to quit "cold-turkey", it is much easier for many smokers to quit gradually over a period of time. Below we have created a quit schedule based on your reported tobacco usage that will allow you to taper off of cigarettes at a pace that works best for you.</p>
+        {{!-- condition to see what option was selected when making quit plan --}}
+        {{#if (isEqual quit_plan.howManyCigs "Less than 5 cigarettes per day")}}
+        {{!-- render table here --}}
+        <p>Less than 5</p>
+        {{!-- repeat the same, else if there was another option, rinse and repeat --}}
+        {{#elseif (isEqual)}}
+        {{!-- {{else if how_many_cigs === "5-10 cigarettes per day" }} --}}
+        {{!-- render table here --}}
+        {{/if}}
         <div class="schedule-container"></div>
     </div>
     {{else}}

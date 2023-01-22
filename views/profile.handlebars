@@ -14,9 +14,16 @@
         {{!-- render table here --}}
         <p>Less than 5</p>
         {{!-- repeat the same, else if there was another option, rinse and repeat --}}
-        {{#elseif (isEqual)}}
-        {{!-- {{else if how_many_cigs === "5-10 cigarettes per day" }} --}}
+        {{else if (isEqual quit_plan.howManyCigs "5-10 cigarettes per day")}}
         {{!-- render table here --}}
+        <p>5-10</p>
+        {{else if (isEqual quit_plan.howManyCigs "10-20 cigarettes per day")}}
+        {{!-- render table here --}}
+        <p>10-20</p>
+        {{else if (isEqual quit_plan.howManyCigs "20 or more cigarettes daily")}}
+        {{!-- render table here --}}
+        <p>20+</p>
+    
         {{/if}}
         <div class="schedule-container"></div>
     </div>
@@ -30,7 +37,7 @@
 <div>
 
     {{!-- canvas for graph below --}}
-    <canvas id='myChart'>
+    <canvas id='myChart' style="max-width">
         <div>
             <p>Cigarettes per week: {{howManyCigs}}</p>
             <p>Money spent per week: {{moneySpentPerWeek}}</p>

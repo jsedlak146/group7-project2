@@ -1,6 +1,10 @@
-#createPlanButton {
+.container {
+    max-width: 100%;
+}
 
-};
+.list {
+    font-size: 1.5rem !important;
+}
 
 #lungs {
     width: 100%;

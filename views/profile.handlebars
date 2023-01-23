@@ -1,6 +1,6 @@
 {{log user}}
-<div>
-    <h2>Welcome {{capitalize name}} !</h2>
+<div class="text-center">
+    <h2 class="m-4">Welcome {{capitalize name}} !</h2>
 
     {{#if quit_plan}}
     <p>This is your custom plan to quit smoking over the next 90 days</p>
@@ -28,12 +28,46 @@
         <div class="schedule-container"></div>
     </div>
     {{else}}
-    <p>You haven't created a quit plan yet. Please create one to start your journey to quit smoking.</p>
-    <a href="/quitplan" class="button">Generate Your Custom Quit Plan</a>
+    <p class="lead">You haven't created a quit plan yet. Please create one to start your journey to quit smoking.</p>
+    <a href="/quitplan" class="button btn btn-primary mb-3">Generate Your Custom Quit Plan</a>
     {{/if}}
 </div>
 
+<div class="row mt-4">
+    <div class="col-12 text-center">
+        <h3 class="m-4">Please complete your daily form!</h3>
 
+        <form class="form new-project-form lead">
+            <div class="form-group">
+                <label for="date">What is today's date?</label>
+                <input class="form-input" type="date" id="date" name="date" />
+            </div>
+            <div class="form-group m-3">
+                <label for="howManyCigs">How many cigarettes did you smoke today?</label>
+                <input class="form-input" type="number" id="howManyCigs" name="howManyCigs" />
+            </div>
+            <div class="form-group m-3">
+                <label for="cravings">Did you have any cravings today? If so, when?</label>
+                <input class="form-input" id="cravings" name="cravings"></input>
+            </div>
+            <div class="form-group m-3">
+                <label for="mood">How was your mood today?</label>
+                <input class="form-input" id="mood" name="mood"></input>
+            </div>
+             <div class="form-group m-3">
+                <label for="daysWithoutCigs">How many days have you gone without smoking??</label>
+                <input class="form-input" type="number" id="daysWithoutCigs" name="daysWithoutCigs"></input>
+            </div>
+            <div class="form-group m-3">
+                <label for="journalEntry">Please enter a brief overview of how you felt today, or any other relevant details to your quitting journey.</label>
+                <input class="form-input" type="text" id="journalEntry" name="journalEntry" />
+            </div>
+            <div class="form-group m-4">
+                <button type="submit" class="btn btn-primary">Submit Daily Form</button>
+            </div>
+        </form>
+    </div>
+</div>
 <div>
 
     {{!-- canvas for graph below --}}
@@ -45,41 +79,12 @@
         </div>
     </canvas>
     {{!-- end canvas --}}
+    <script src="./js/profile.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./js/graph.js"></script>
+</div>
 
-<div class="row mt-4">
-    <div class="col-md-6">
-        <h3>Please complete your daily form!</h3>
 
-        <form class="form new-project-form">
-            <div class="form-group">
-                <label for="date">What is today's date?</label>
-                <input class="form-input" type="date" id="date" name="date" />
-            </div>
-            <div class="form-group">
-                <label for="howManyCigs">How many cigarettes did you smoke today?</label>
-                <input class="form-input" type="number" id="howManyCigs" name="howManyCigs" />
-            </div>
-            <div class="form-group">
-                <label for="cravings">Did you have any cravings today? If so, when?</label>
-                <textarea class="form-input" id="cravings" name="cravings"></textarea>
-            </div>
-            <div class="form-group">
-                <label for="mood">How was your mood today?</label>
-                <textarea class="form-input" id="mood" name="mood"></textarea>
-            </div>
-             <div class="form-group">
-                <label for="daysWithoutCigs">How many days have you gone without smoking??</label>
-                <input class="form-input" type="number" id="daysWithoutCigs" name="daysWithoutCigs"></input>
-            </div>
-            <div class="form-group">
-                <label for="journalEntry">Please enter a brief overview of how you felt today, or any other relevant details to your quitting journey.</label>
-                <input class="form-input" type="text" id="journalEntry" name="journalEntry" />
-            </div>
-            <div class="form-group">
-                <button type="submit" class="btn btn-primary">Create</button>
-            </div>
-        </form>
-    </div>
 
     {{!-- {{#if projects.length}}
     <div class="col-md-6 project-list">
@@ -97,11 +102,8 @@
         {{/each}}
     </div>
     {{/if}} --}}
-</div> 
 
-<script src="./js/profile.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="./js/graph.js"></script>
+
 
 
 {{!-- <h3>Remember You're Quiting!</h3>

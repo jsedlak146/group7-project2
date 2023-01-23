@@ -12,17 +12,128 @@
         {{!-- condition to see what option was selected when making quit plan --}}
         {{#if (isEqual quit_plan.howManyCigs "Less than 5 cigarettes per day")}}
         {{!-- render table here --}}
-        <p>Less than 5</p>
+        <style>
+            table,
+            th,
+            td {
+                border: 1px solid black;
+                margin: 0 auto;
+                width: fit-content;
+            }
+        </style>
+        <table>
+            <tr>
+                <th>After:</th>
+                <th>2 weeks</th>
+                <th>4 weeks</th>
+                <th>6 weeks</th>
+                <th>8 weeks</th>
+                <th>10 weeks</th>
+                <th>12 weeks</th>
+            </tr>
+            <tr>
+                <th>Max cigarettes per day:</th>
+                <td>5 cigarettes</td>
+                <td>4 cigarettes</td>
+                <td>3 cigarettes</td>
+                <td>2 cigarettes</td>
+                <td>1 cigarette</td>
+                <td>0 cigarettes</td>
+            </tr>
+        </table>
         {{!-- repeat the same, else if there was another option, rinse and repeat --}}
         {{else if (isEqual quit_plan.howManyCigs "5-10 cigarettes per day")}}
-        {{!-- render table here --}}
-        <p>5-10</p>
+        <style>
+            table,
+            th,
+            td {
+                border: 1px solid black;
+                margin: 0 auto;
+                width: fit-content;
+            }
+        </style>
+        <table>
+            <tr>
+                <th>After:</th>
+                <th>2 weeks</th>
+                <th>4 weeks</th>
+                <th>6 weeks</th>
+                <th>8 weeks</th>
+                <th>10 weeks</th>
+                <th>12 weeks</th>
+            </tr>
+            <tr>
+                <th>Max cigarettes per day:</th>
+                <td>10 cigarettes</td>
+                <td>8 cigarettes</td>
+                <td>6 cigarettes</td>
+                <td>4 cigarettes</td>
+                <td>2 cigarettes</td>
+                <td>0 cigarette</td>
+            </tr>
+        </table>
         {{else if (isEqual quit_plan.howManyCigs "10-20 cigarettes per day")}}
         {{!-- render table here --}}
-        <p>10-20</p>
+        <style>
+            table,
+            th,
+            td {
+                border: 1px solid black;
+                margin: 0 auto;
+                width: fit-content;
+            }
+        </style>
+        <table>
+            <tr>
+                <th>After:</th>
+                <th>2 weeks</th>
+                <th>4 weeks</th>
+                <th>6 weeks</th>
+                <th>8 weeks</th>
+                <th>10 weeks</th>
+                <th>12 weeks</th>
+            </tr>
+            <tr>
+                <th>Max cigarettes per day:</th>
+                <td>16 cigarettes</td>
+                <td>13 cigarettes</td>
+                <td>10 cigarettes</td>
+                <td>7 cigarettes</td>
+                <td>3 cigarettes</td>
+                <td>0 cigarette</td>
+            </tr>
+        </table>
         {{else if (isEqual quit_plan.howManyCigs "20 or more cigarettes daily")}}
         {{!-- render table here --}}
-        <p>20+</p>
+        <style>
+            table,
+            th,
+            td {
+                border: 1px solid black;
+                margin: 0 auto;
+                width: fit-content;
+            }
+        </style>
+        <table>
+            <tr>
+                <th>After:</th>
+                <th>2 weeks</th>
+                <th>4 weeks</th>
+                <th>6 weeks</th>
+                <th>8 weeks</th>
+                <th>10 weeks</th>
+                <th>12 weeks</th>
+            </tr>
+            <tr>
+                <th>Max cigarettes per day:</th>
+                <td>20 cigarettes</td>
+                <td>16 cigarettes</td>
+                <td>12 cigarettes</td>
+                <td>8 cigarettes</td>
+                <td>4 cigarettes</td>
+                <td>0 cigarette</td>
+            </tr>
+        </table>
     
         {{/if}}
         <div class="schedule-container"></div>

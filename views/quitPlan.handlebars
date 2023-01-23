@@ -1,15 +1,15 @@
-<div class="row">
-    <div class="col-auto">
-        <h2>Welcome, {{capitalize user.name}}!</h2>
+<div class="row text-center">
+    <div>
+        <h2 class="mt-4">Welcome, {{capitalize user.name}}!</h2>
     </div>
 </div>
 
 <div class="row mt-4">
-    <div class="col-md-6">
-        <p>Please answer the questions below as accurately as you can. Your custom quit plan will be generated based on your response, so it is important to be as honest as possible about your tobacco use.</p>
+    <div class="col-12 text-center">
+        <p class="lead">Please answer the questions below as accurately as you can. Your custom quit plan will be generated based on your response, so it is important to be as honest as possible about your tobacco use.</p>
 
-        <form class="form quitplan-form">
-            <div class="form-group">
+        <form class="form quitplan-form lead text-center">
+            <div class="form-group m-3">
                 <label for="howManyCigs">How many cigarettes do you smoke in a 24-hour period?</label>
                 <select class="form-input" id="howManyCigs" name="howManyCigs" required>
                     <option value="" disabled selected>Select an Option</option>
@@ -19,7 +19,7 @@
                     <option value="20 or more cigarettes daily">20 or more cigarettes daily</option>
                 </select>
             </div>
-            <div class="form-group">
+            <div class="form-group m-3">
                 <label for="timeSmoking">How long have you been smoking?</label>
                 <select class="form-input" id="timeSmoking" name="timeSmoking" required>
                     <option value="" disabled selected>Select an Option</option>
@@ -29,7 +29,7 @@
                     <option value="10+ years">10+ years</option>
                 </select>
             </div>
-            <div class="form-group">
+            <div class="form-group m-3">
                 <label for="cigPrice">How much do you spend on cigarettes per week?</label>
                 <select class="form-input" id="cigPrice" name="cigPrice" required>
                     <option value="" disabled selected>Select an Option</option>
@@ -39,12 +39,12 @@
                     <option value="More than $80">More than $80</option>
                 </select>
             </div>
-            <div class="form-group">
+            <div class="form-group m-3">
                 <label for="whyQuit">Why do you want to quit smoking in the next 90
                     days?</label>
-                <textarea class="form-input" id="whyQuit" name="whyQuit"></textarea>
+                <input class="form-input" id="whyQuit" name="whyQuit"></input>
             </div>
-            <div class="form-group">
+            <div class="form-group m-3">
                 <label for="triggers">What is your main trigger for smoking?</label>
                 <select class="form-input" id="triggers" name="triggers" required>
                     <option value="" disabled selected>Select an Option</option>
@@ -54,7 +54,7 @@
                 </select>
             </div>
 
-            <div class="form-group">
+            <div class="form-group m-4">
                 <button type="submit" class="btn btn-primary">Create Quit Plan</button>
             </div>
         </form>

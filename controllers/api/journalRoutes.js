@@ -17,21 +17,6 @@ router.post('/', withAuth, async (req, res) => {
     }
 });
 
-// api/journal/newQuitPlan for insomnia to see if data is being posted
-router.post('/newQuitPlan', withAuth, async (req, res) => {
-    console.table(req.body)
-    try {
-        console.log("jingle")
-        const newForm = await QuitPlan.create({
-            ...req.body,
-            user_id: req.session.user_id,
-        });
-        console.log(newForm)
-        res.status(200).json(newForm);
-    } catch (err) {
-        res.status(400).json(err);
-    }
-});
 
 router.get('/', async (req, res) => {
     console.log('USER INFORMATION', req.session)

@@ -16,7 +16,22 @@ And when I enter my daily quitting information
 I will be able to see my progress graphically, save my old journal entries and read stories from other users.
 
 ## Screenshot
+![](./readmephotos/project2.png)
+![](./readmephotos/project2.2.png)
+![](./readmephotos/project2.3.png)
+
+
+## Contributors
+
+@benyomtov
+@pljon
+@ThomasJay44
+@jsedlak146
 
 ## Licenses
 
+n/a
+
 ## Credits
+
+n/a
